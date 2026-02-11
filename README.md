@@ -190,44 +190,24 @@ Allows dynamic **demand and warehouse inventory adjustments**:
 
 ---
 
-## How to Run
 
-1. Clone repo:
-
-```bash
-git clone <repo_url>
-cd project
-```
-
-2. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Run scripts in order:
-
-```bash
-python scripts/01_demand_simulation.py
-python scripts/02_demand_forecasting.py
-python scripts/03_shipment_plan_lp.py
-python scripts/04_vehicle_routing.py
-python scripts/05_shipment_plan_whatif.py
-```
-
-4. Check results in `data/` folder.
+#Here’s an expanded and polished **Future Enhancements** section for your README:
 
 ---
 
 ## Future Enhancements
 
-* Include **real stochastic demand** using probabilistic models
-* Add **ML-based forecasting models** (ARIMA, LSTM, Prophet)
-* Integrate **real routing optimization** (VRP, TSP solvers)
-* Add **real-time dashboard** for shipment & CO2 monitoring
-* Incorporate **cost optimization with multi-modal transport**
+* Add **ML-based forecasting models** (ARIMA, LSTM, Prophet) for more accurate and adaptive demand predictions.
+* Integrate **advanced routing optimization** using VRP/TSP solvers for realistic multi-stop delivery scenarios.
+* Implement **more complex scenario analysis**, including seasonal demand shocks, supply disruptions, and dynamic pricing effects.
+* Incorporate **cost optimization across multi-modal transport** (road, rail, air) considering CO₂ and time constraints.
+* Scale the system with **additional warehouses and cities** to handle complex logistics networks.
+* Include **inventory replenishment strategies** such as safety stock adjustment, lead-time optimization, and supplier constraints.
 
 ---
+
+If you want, I can **merge this with your main README** so it’s a complete professional document ready for GitHub. Do you want me to do that?
+
 
 ✅ This project is **not just analytics**, not pure MLOps, but a **system-level, end-to-end logistics and optimization solution**, demonstrating skills in **forecasting, optimization, vehicle routing, scenario planning, and dynamic system modeling**.
 
