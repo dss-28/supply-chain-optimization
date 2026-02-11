@@ -33,6 +33,8 @@ It’s designed not as a random input → output model, but as a **decision-maki
 
 This system simulates **warehouse and city logistics** over a 30-day horizon. It solves **optimization problems** for shipment planning and vehicle routing, incorporates **demand uncertainty**, and enables **dynamic what-if scenario planning**.
 **Workflow Diagram:**  
+         
+```
           +----------------+
           |   Simulator    |
           +----------------+
@@ -51,34 +53,36 @@ This system simulates **warehouse and city logistics** over a 30-day horizon. It
           |                |
           +--------+-------+
                    v
-          +------------------------+
-          | Inventory Management   |
-          +------------------------+
-          | Inputs: Forecast Output|
-          |         Inventory Data |
-          | Outputs: Shipment Plan |
+          +----------------------------+
+          |   Inventory Management     |
+          +----------------------------+
+          | Inputs: Forecast Output    |
+          |         Inventory Data     |
+          | Outputs: Shipment Plan     |
           |          Updated Inventory |
-          +------------------------+
-                   |          \
-                   v           \
-          +------------------------+
-          |   Vehicle Routing      |
-          +------------------------+
-          | Inputs: Shipment Plan  |
+          +----------------------------+
+                       |         
+                       v          
+          +---------------------------+
+          |     Vehicle Routing       |
+          +---------------------------+
+          | Inputs: Shipment Plan     |
           |         Updated Inventory |
-          | Output: Optimized Routes (per vehicle) |
+          | Output: Optimized Routes  |
+          |         (per vehicle)     |
+          +---------------------------+
+                       |
+                       v
+          +----------------------------+
+          |      What-If Scenario      |
+          +----------------------------+
+          | Inputs: Forecast Output    |
+          |         Shipment Plan      |
+          |         Optimized Routes   |
+          | Output: Adjusted Shipments |
+          |          & Routes          |
           +------------------------+
-                   |
-                   v
-          +------------------------+
-          |   What-If Scenario     |
-          +------------------------+
-          | Inputs: Forecast Output|
-          |         Shipment Plan  |
-          |         Optimized Routes|
-          | Output: Adjusted Shipments & Routes |
-          +------------------------+
-
+```
 Key focus: **systems-level thinking** rather than just analytics. Integrates:
 
 * Deterministic demand simulation
@@ -98,76 +102,7 @@ Key focus: **systems-level thinking** rather than just analytics. Integrates:
 * **What-If Analysis:** Test scenarios like demand surge or limited warehouse inventory
 * **End-to-End System:** From raw demand → forecast → shipment plan → vehicle routing → scenario testing
 
-
-Ah! Got it — let’s make a **final clean diagram** where **Vehicle Routing has exactly two inputs**:
-
-* **Inventory**
-* **Shipment Plan**
-
-And its **output is Optimized Routes (vehicle-level)**. The rest of the flow remains the same. Here’s the corrected ASCII diagram:
-
-```
-          +----------------+
-          |   Simulator    |
-          +----------------+
-           /              \
-          v                v
-   +----------------+  +----------------+
-   |  Demand Data   |  | Inventory Data |
-   +----------------+  +----------------+
-          |                |
-          v                |
-+------------------------+ |
-|  Demand Forecasting    | |
-+------------------------+ |
-| Output: Forecast Output| |
-+------------------------+ |
-          |                |
-          +--------+-------+
-                   v
-          +------------------------+
-          | Inventory Management   |
-          +------------------------+
-          | Inputs: Forecast Output|
-          |         Inventory Data |
-          | Outputs: Shipment Plan |
-          |          Updated Inventory |
-          +------------------------+
-                   |          \
-                   v           \
-          +------------------------+
-          |   Vehicle Routing      |
-          +------------------------+
-          | Inputs: Shipment Plan  |
-          |         Updated Inventory |
-          | Output: Optimized Routes (per vehicle) |
-          +------------------------+
-                   |
-                   v
-          +------------------------+
-          |   What-If Scenario     |
-          +------------------------+
-          | Inputs: Forecast Output|
-          |         Shipment Plan  |
-          |         Optimized Routes|
-          | Output: Adjusted Shipments & Routes |
-          +------------------------+
-```
-
-### ✅ Key Features:
-
-1. **Simulator** generates **Demand Data + Inventory Data**.
-2. **Demand Forecasting** only takes **Demand Data** → produces **Forecast Output**.
-3. **Inventory Management** merges **Forecast Output + Inventory Data** → produces **Shipment Plan + Updated Inventory**.
-4. **Vehicle Routing** now correctly takes **Shipment Plan + Updated Inventory** → outputs **Optimized Routes (vehicle-level)**.
-5. **What-If Analysis** can adjust all three outputs to produce **final adjusted shipments and routes**.
-
 ---
-
-If you want, I can also make a **fully compact “branching arrows” diagram** for README that looks like a **real flowchart but fits in one block**, perfect for portfolio presentation.
-
-Do you want me to do that?
-
 
 ## Project Structure
 
