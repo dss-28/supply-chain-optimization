@@ -71,11 +71,11 @@ project/
 │
 │
 ├── scripts/
-│   ├── 01_demand_simulation.py
+│   ├── 01_simulatior.py
 │   ├── 02_demand_forecasting.py
-│   ├── 03_shipment_plan_lp.py
+│   ├── 03_inventory_mangement.py
 │   ├── 04_vehicle_routing.py
-│   └── 05_shipment_plan_whatif.py
+│   └── 05_what_if_scenario_analysis.py
 │
 ├── README.md
 
