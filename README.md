@@ -69,8 +69,6 @@ project/
 │   ├── vehicle_routes_optimized.csv
 │   └── shipment_plan_whatif.csv
 │
-├── notebooks/
-│   └── exploratory.ipynb
 │
 ├── scripts/
 │   ├── 01_demand_simulation.py
@@ -80,7 +78,7 @@ project/
 │   └── 05_shipment_plan_whatif.py
 │
 ├── README.md
-└── requirements.txt
+
 ```
 
 ---
