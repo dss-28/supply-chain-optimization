@@ -118,7 +118,7 @@ Performs **moving-average-based forecasting** with uncertainty bands:
 
 ---
 
-### 3️⃣ Inventory & LP Parameters
+### 3️⃣ Inventory Data
 
 **Goal:** Create warehouse × city table for LP optimization.
 
@@ -127,7 +127,7 @@ Performs **moving-average-based forecasting** with uncertainty bands:
 * **Warehouses:** 2 (W1, W2)
 * **Cities:** 4 (Mumbai, Pune, Delhi, Bangalore)
 * **Days simulated:** 30
-* **Data generated:** `demand_data.csv` and `inventory_data.csv`
+* **Data generated:** ``inventory_data.csv`
 
 **Method:**
 
@@ -146,7 +146,7 @@ Performs **moving-average-based forecasting** with uncertainty bands:
 
 ---
 
-### 4️⃣ LP Shipment Planning
+### 4️⃣ LP Shipment Planning(Inventory Management)
 
 Formulates a **Linear Programming (LP)** problem to:
 
