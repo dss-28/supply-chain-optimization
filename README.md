@@ -32,6 +32,8 @@ It’s designed not as a random input → output model, but as a **decision-maki
 ## Overview
 
 This system simulates **warehouse and city logistics** over a 30-day horizon. It solves **optimization problems** for shipment planning and vehicle routing, incorporates **demand uncertainty**, and enables **dynamic what-if scenario planning**.
+**Workflow Diagram:**  
+![Workflow Diagram](workflow_diagram.png)  <!-- Add your image here -->
 
 Key focus: **systems-level thinking** rather than just analytics. Integrates:
 
@@ -152,9 +154,9 @@ Formulates a **Linear Programming (LP)** problem to:
 
 * Decide **shipment quantities** per warehouse → city → day
 * **Minimize total cost** = transportation cost + CO₂ emissions + stockout (unmet demand) penalty
+* **Objective**: Minimize total transportation cost + weighted CO₂ emissions + stockout (unmet demand) penalty.
 * **Constraints:**
 
-  * **Objective**: Minimize total transportation cost + weighted CO₂ emissions + stockout (unmet demand) penalty.
   * Total shipments ≤ warehouse available inventory
   * Shipments & unmet demand ≥ 0
 * Save results to `shipment_plan_lp.csv`
