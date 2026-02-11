@@ -33,7 +33,51 @@ It’s designed not as a random input → output model, but as a **decision-maki
 
 This system simulates **warehouse and city logistics** over a 30-day horizon. It solves **optimization problems** for shipment planning and vehicle routing, incorporates **demand uncertainty**, and enables **dynamic what-if scenario planning**.
 **Workflow Diagram:**  
-![Workflow Diagram](workflow_diagram.png)  <!-- Add your image here -->
+          +----------------+
+          |   Simulator    |
+          +----------------+
+           /              \
+          v                v
+   +----------------+  +----------------+
+   |  Demand Data   |  | Inventory Data |
+   +----------------+  +----------------+
+          |                |
+          v                |
++------------------------+ |
+|  Demand Forecasting    | |
++------------------------+ |
+| Output: Forecast Output| |
++------------------------+ |
+          |                |
+          +--------+-------+
+                   v
+          +------------------------+
+          | Inventory Management   |
+          +------------------------+
+          | Inputs: Forecast Output|
+          |         Inventory Data |
+          | Outputs: Shipment Plan |
+          |          Updated Inventory |
+          +------------------------+
+                   |          \
+                   v           \
+          +------------------------+
+          |   Vehicle Routing      |
+          +------------------------+
+          | Inputs: Shipment Plan  |
+          |         Updated Inventory |
+          | Output: Optimized Routes (per vehicle) |
+          +------------------------+
+                   |
+                   v
+          +------------------------+
+          |   What-If Scenario     |
+          +------------------------+
+          | Inputs: Forecast Output|
+          |         Shipment Plan  |
+          |         Optimized Routes|
+          | Output: Adjusted Shipments & Routes |
+          +------------------------+
 
 Key focus: **systems-level thinking** rather than just analytics. Integrates:
 
@@ -50,12 +94,12 @@ Key focus: **systems-level thinking** rather than just analytics. Integrates:
 * **Demand Simulation:** Seasonal demand patterns per city
 * **Forecasting:** Moving average with uncertainty bands (P10, P50, P90)
 * **Inventory Management:** Warehouse capacity, distance-based cost, CO₂ emissions
-* **LP-based Shipment Planning:** Optimize shipments to meet demand while minimizing cost, CO₂, and stockouts
-* **Vehicle Routing:** Optimize vehicle routes for multiple warehouses with capacity constraints
+* **Vehicle Routing:** Optimize vehicle multiple warehouses with capacity constraints
 * **What-If Analysis:** Test scenarios like demand surge or limited warehouse inventory
-* **Dynamic & Scalable:** Multipliers and constraints are parameterized for flexible scenario handling
 * **End-to-End System:** From raw demand → forecast → shipment plan → vehicle routing → scenario testing
 
+
+What-If Analysis can adjust all three outputs to produce final adjusted shipments and routes.
 ---
 
 ## Project Structure
@@ -105,7 +149,7 @@ Simulates **daily deterministic demand** per city using **base demand + seasonal
 ### 2️⃣ Demand Forecasting
 
 Performs **moving-average-based forecasting** with uncertainty bands:
-
+MA9 is used.
 * `demand_p50` → mean forecast
 * `demand_p10` → lower bound (10th percentile)
 * `demand_p90` → upper bound (90th percentile)(this is used in further stages for safety)
