@@ -73,7 +73,7 @@ project/
 ├── scripts/
 │   ├── 01_simulatior.py
 │   ├── 02_demand_forecasting.py
-│   ├── 03_inventory_mangement.py
+│   ├── 03_inventory_management.py
 │   ├── 04_vehicle_routing.py
 │   └── 05_what_if_scenario_analysis.py
 │
