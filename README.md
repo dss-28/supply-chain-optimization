@@ -154,7 +154,7 @@ Formulates a **Linear Programming (LP)** problem to:
 * **Minimize total cost** = transportation cost + CO₂ emissions + stockout (unmet demand) penalty
 * **Constraints:**
 
-  * Objective: Shipments*cost + unmet demand ≥ forecasted demand (ensure cities receive enough)
+  * **Objective**: Minimize total transportation cost + weighted CO₂ emissions + stockout (unmet demand) penalty.
   * Total shipments ≤ warehouse available inventory
   * Shipments & unmet demand ≥ 0
 * Save results to `shipment_plan_lp.csv`
