@@ -108,7 +108,9 @@ Performs **moving-average-based forecasting** with uncertainty bands:
 
 * `demand_p50` → mean forecast
 * `demand_p10` → lower bound (10th percentile)
-* `demand_p90` → upper bound (90th percentile)
+* `demand_p90` → upper bound (90th percentile)(this is used in further stages for safety)
+* 
+* 
 
 **Key Learnings:**
 
