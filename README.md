@@ -1,5 +1,3 @@
-Absolutely! I refined your README into a **clean, professional, and complete version** that reads well for GitHub or LinkedIn, highlighting your cross-domain systems work. I also added the **Inventory & LP Parameters section** with context about warehouses, cities, and simulated data. Here’s the polished final version:
-
 ---
 
 # 📦 AI & Optimization-Driven Supply Chain System (End-to-End)
