@@ -150,20 +150,17 @@ Performs **moving-average-based forecasting** with uncertainty bands:
 
 ### 4️⃣ LP Shipment Planning
 
-Formulates **Linear Programming (LP)** problem to:
+Formulates a **Linear Programming (LP)** problem to:
 
 * Decide **shipment quantities** per warehouse → city → day
-* **Minimize total cost** = transportation cost + CO₂ + stockout penalty
-* Respect **warehouse inventory constraints**
+* **Minimize total cost** = transportation cost + CO₂ emissions + stockout (unmet demand) penalty
+* **Constraints:**
+
+  * Objective: Shipments*cost + unmet demand ≥ forecasted demand (ensure cities receive enough)
+  * Total shipments ≤ warehouse available inventory
+  * Shipments & unmet demand ≥ 0
 * Save results to `shipment_plan_lp.csv`
-
-**Key Learnings:**
-
-* LP formulation & solution using PuLP
-* Balancing multiple objectives (cost + CO₂ + stockout)
-* Handling multi-day, multi-warehouse constraints
-
----
+Here, we are making tradeofs betwwen cost and unment demand to find minimal value of objective.
 
 ### 5️⃣ Vehicle Routing Optimization
 
@@ -230,6 +227,6 @@ Dynamic **demand and warehouse inventory adjustments**:
 
 ---
 
-✅ This project is **not just analytics**, not pure MLOps, but a **system-level, end-to-end logistics and optimization solution**, demonstrating skills in **forecasting, optimization, vehicle routing, scenario planning, and dynamic system modeling**.
+✅ This project is **not just analytics**, not even MLOps, but a **system-level, end-to-end logistics and optimization solution**, demonstrating skills in **forecasting, optimization, vehicle routing, scenario planning, and dynamic system modeling**.
 
 ---
