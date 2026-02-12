@@ -217,10 +217,3 @@ It is built as a foundation for more advanced research in:
 * Sustainable logistics modeling
 
 ---
-
-
-* Or more “quant/optimization engineer” oriented
-
-Different positioning → different tone.
-
-Tell me which direction you want.
